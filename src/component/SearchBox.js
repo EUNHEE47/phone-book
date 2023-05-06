@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { BsSearch } from "react-icons/bs";
 
 const SearchBox = () => {
   const [keyword, setKeyword] = useState("");
   let dispatch = useDispatch();
-  let { contactList } = useSelector((state) => state);
+  // let { contact } = useSelector((state) => state);
 
   const searchByName = (event) => {
     event.preventDefault();
@@ -16,16 +17,16 @@ const SearchBox = () => {
     <div>
       <Form onSubmit={searchByName}>
         <Row>
-          <Col lg={10}>
+          <Col lg={6}>
             <Form.Control
               type="text"
               placeholder="Name"
-              onChange={(event) => setKeyword(event.target.value)}
+              onChange={(e) => setKeyword(e.target.value)}
             />
           </Col>
-          <Col lg={2}>
+          <Col>
             <Button variant="dark" type="submit">
-              찾기
+              <BsSearch />
             </Button>
           </Col>
         </Row>

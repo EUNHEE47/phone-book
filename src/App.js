@@ -12,9 +12,11 @@ import ContactList from "./component/ContactList";
 function App() {
   return (
     <div>
-      <h1 className="title">PHONE BOOK</h1>
+      <div className="title">
+        <h1>PHONE BOOK</h1>
+      </div>
       <Container>
-        <Row>
+        <Row className="wrap">
           <Col>
             <ContactForm />
           </Col>
